@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Edit Task</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+</head>
+
+<body>
+    <div class="container mt-5">
+        <h2>Edit Task</h2>
+        <form method="POST" class="form border p-2 my-5">
+            {% csrf_token %}
+            <div class="form-group">
+                <h6>Task Title</h6>
+                <input type="text" name="title" class="form-control my-3 border border-success" value="{{ task.title }}" required>
+            </div>
+            <button type="submit" class="btn btn-primary mt-2">Update Task</button>
+            <a href="{% url 'todo_list' %}" class="btn btn-secondary mt-2">Cancel</a>
+        </form>
+    </div>
+</body>
+
+</html>
